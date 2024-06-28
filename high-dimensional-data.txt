@@ -1,0 +1,34 @@
+Challenges of working with high dimensional data
+- Beyond 3 dimensions it gets harder to vissualize without using some animation or other techniques
+- We become stuck on which dimensions are important to make decisions with, becuase of the false sense of closeness 
+- Its harder to know which dimensions affect the other (sensitivity or casual analysis)
+- Its just harder to understand
+
+> In high dimension, all points tend to be at the same distance from each other
+> Which means that there can be risk of making bad assumptions on this observation
+- DSTA Notes
+
+> In higher dimension algorithms like clustering become useless, and distance based algorithms such as similarity
+measures e.g. similarity also, due to points becoming orthogonal to the axes
+
+// From Claude
+False Sense of Parity (or "Curse of Dimensionality"):
+In high-dimensional spaces, the concept of "closeness" or similarity becomes less meaningful. 
+As the number of dimensions increases, the distance between any two points tends to become more uniform. This can create a false 
+sense that all points are equidistant or similarly related, when in fact meaningful differences exist.
+
+Sparsity: 
+As dimensions increase, the available data becomes sparse in relation to the space it occupies, making it harder to find statistically significant patterns.
+
+Computational Complexity: 
+Algorithms often become exponentially more complex and time-consuming as dimensions increase.
+
+Overfitting: 
+With more dimensions, models are more prone to fitting noise in the training data, leading to poor generalization.
+
+Difficulty in Visualization: 
+Human intuition struggles with visualizing beyond three dimensions, making data interpretation challenging.
+
+Feature Correlation: 
+In high dimensions, features are more likely to be correlated, which can lead to redundancy and model instability.
+Increased Risk of Spurious Correlations: With many dimensions, the chance of finding falsely significant relationships increases.
