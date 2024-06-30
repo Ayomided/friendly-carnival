@@ -76,3 +76,12 @@ This framework is particularly useful in data science for:
 - Ranking products or services based on multiple features
 - Evaluating employee performance across various metrics
 - Assessing the evolution of entities (companies, countries, etc.) across multiple dimensions over time
+
+Should we keep user ratings?
+Yes 
+-> Feeling of improvement 
+-> Gauge for new features  
+-> Better matchmaking 
+
+No
+-> Not necessary for casual viewers
