@@ -1,0 +1,11 @@
+# N-Gram models
+unigrams, bigrams, tigrams
+
+# Perplexity
+H(W) is the average number of bits needed to encode each word.
+H(W) = -1/n.log.P(w_i) -> Cros entropy of W
+P(W)=2^H(W) is the average number of words that can be encoded using H(W) bits.
+
+Perplexity is the weighted branching factor for the possible completion of W, 
+which with a _low PP_ there is less doubt of what the next work should be, and the higher 
+it gets the harder it is to pick between the possible combinations

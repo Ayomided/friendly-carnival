@@ -1,0 +1,49 @@
+With document as:
+    bag of words
+
+    With corpus as:
+        collection of documents
+
+            a_ij = k
+            (Example: a_(Romeo)(Shakespare plays) = k)
+            where k is the number of occurrence of i in document j
+
+# On row and column normalization
+// https://stackoverflow.com/questions/60275133/difference-between-row-and-column-normalization
+// https://stats.stackexchange.com/questions/175463/what-is-the-purpose-of-row-normalization
+
+# Row normalization:
+When we normalize each row, we're adjusting the values so that they sum to 1. 
+This turns each row into a probability distribution.
+
+- High entropy would mean the word is used evenly across many documents/contexts.
+- Low entropy would mean the word is used primarily in a few specific documents/contexts.
+
+# Column normalization:
+When we normalize each column, we're adjusting the values so that each column sums to 1.
+Now, each value in the column represents the probability of that word appearing in this specific document.
+
+- High entropy would mean the document uses a diverse vocabulary with words appearing somewhat equally.
+- Low entropy would mean the document focuses on a few specific words.
+
+# Text compression
+- low frequency characters and words have high information entropy; which means that a word such as 'stethoscope'
+carries more information about the document as it is less frequently seen like words as 'and'
+- This allows us to compress text with this principle of entropy allowing us encoding common words like "the" with 
+less bits and "zootopia" with more.
+
+# Encoding compression
+- Collect the frequency of words in a corpus
+- Sort letters by their increasing frequency for the document language
+
+// https://en.wikipedia.org/wiki/Huffman_coding
+
+# information Retrieval
+- a selection of the documents ranked by their importance wrt. the keyword[s]
+
+    ## TF-IDF
+    The standard empirical measure for IR ranking
+    $TFIDF(qi,dj,C)=TF(qi,dj)⋅IDF(qi,C)$
+
+# Part of speech tagging/recognition
+- A group of words are recognized as naming a worldy object or a stand-alone concept.
