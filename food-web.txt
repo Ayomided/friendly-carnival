@@ -1,0 +1,98 @@
+# Food web
+G = ⟨V, E⟩ where E ⊆ V × V
+
+In a food web, V (vertices) represents species, and E (edges) 
+represents feeding relationships.
+
+Graph Metrics:
+|V| = n: number of species
+|E| = m: number of feeding relationships
+Density = |E| / |V|²: indicates how interconnected the food web is
+
+Adjacency:
+Species v is adjacent to u if (u,v) ∈ E: means species v eats species u
+(v,v) ∉ E: typically, a species doesn't eat itself (though exceptions exist)
+
+Neighborhood and Degree:
+N(v): set of species that v eats or is eaten by
+deg(v): number of direct feeding relationships involving species v
+
+
+Adjacency Matrix:
+A_n×n: a square matrix where a_ij = 1 if species i eats species j, 0 otherwise
+
+
+Incidence Matrix:
+I_n×m: would show which species are involved in each feeding relationship
+
+
+1. Paths in Graphs:
+   * A path from u to v is a sequence of edges that connects u to v.
+   * It's represented as ⟨(u,c1),(c1,c2),…(ck,v)⟩, where each pair represents an edge.
+   * The path shows how to "travel" from u to v through the graph.
+
+2. Path Length:
+   * The length of a path is the number of edges in the sequence.
+   * In the example, the length is k+1 (k intermediate nodes plus the final edge).
+   * The cardinality of the path refers to this length.
+
+3. Connectivity:
+   * Two vertices are connected if there exists any path between them.
+   * A graph is connected if there's a path between every pair of vertices.
+   * This is crucial for understanding the structure and accessibility within the graph.
+
+4. Distance:
+   * The distance between two vertices is the length of the shortest path connecting them.
+   * If no path exists, the distance is considered infinite (∞).
+   * There may be multiple shortest paths of the same length.
+
+5. Diameter:
+   * The diameter of a graph is the maximum distance between any two vertices.
+   * It represents the "longest shortest path" in the graph.
+   * A small diameter indicates that all vertices are relatively close to each other.
+
+6. Weighted Graphs:
+   * G=⟨V,E,w⟩ represents a weighted graph.
+   * w:E→ℝ means each edge has a real number as its weight.
+   * In weighted graphs, path length is the sum of the weights of the edges in the path.
+
+7. Directed Graphs:
+   * G=⟨V,E⟩ where ⟨u,v⟩∈E represents a directed graph.
+   * Edges are called "arcs" and have a direction (from u to v).
+   * This introduces concepts of out-neighbors (vertices that can be reached from a vertex) and in-neighbors (vertices that can reach a vertex).
+
+8. Multilayer Graphs:
+   * G=⟨V,E,D⟩ represents a multilayer graph.
+   * D are the dimensions or layers of the graph.
+   * Arcs are now represented as ⟨u,v,d⟩, indicating a connection from u to v in dimension d.
+
+These concepts have various applications:
+
+1. In social network analysis:
+   * Paths represent chains of connections between people.
+   * Distance can indicate degrees of separation.
+   * Diameter gives an idea of how "small" the world is within the network.
+
+2. In transportation networks:
+   * Weighted edges can represent distances or travel times.
+   * Shortest paths are crucial for routing.
+   * Connectivity is essential for ensuring all locations are reachable.
+
+3. In communication networks:
+   * Paths represent routes data can take.
+   * Weights might represent bandwidth or latency.
+   * Diameter can indicate maximum delay in the network.
+
+4. In biological networks (like protein interactions):
+   * Paths can represent chains of interactions.
+   * Weights might represent interaction strengths.
+   * Multilayer aspects could represent different types of interactions or conditions.
+
+5. In recommendation systems:
+   * Paths could represent chains of related items.
+   * Weights might represent strength of relationships.
+   * Multilayer aspects could represent different types of relationships (e.g., "bought together", "viewed together", etc.)
+
+6. In knowledge graphs:
+   * Paths represent chains of related concepts.
+   * Different dimensions could represent different types of relationships.

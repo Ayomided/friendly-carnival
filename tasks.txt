@@ -1,0 +1,50 @@
+# OBJECTIVE A: WRITE OUR OWN GINI FUNCTION
+- inspect a Decision-tree baseline code
+- Lay out a function that segments the data according to the best Gini values available.:
+> Remember: Gini=0 is the best scenario
+
+```
+def get_split(dataset):
+    b_index, b_value, b_score, b_groups = 999, 999, 999, None
+
+    # TODO: Find the best possible place to split the dataset
+    #
+    # TODO: assign datapoints to 'left' and 'right' segments
+    # using the test_split(index, value, dataset)
+    # function.
+    #
+    # TODO: define a gini_index(groups, classes)
+    # func. to construct a branch of the tree
+
+    return {'index':b_index, 'value':b_value, 'groups':b_groups}
+```
+
+Compute Gini index for a split dataset
+
+```
+def gini_index(groups, classes):
+
+    total_gini = 0.0
+
+    # TODO : For each group, calculate its Gini index.
+
+    return total_gini
+```
+
+A model solution for this exercise is available but please attempt your solution first.
+If you are uncertain on how to write this type of function you can go directly to the model solution.
+
+# OBJECTIVE B: WRITE YOUR OWN DT GENERATOR
+Can you write Python functions that iteratively segment the data until you have a decision tree?
+
+## Food web networks
+// https://www.dcs.bbk.ac.uk/~ale/dsta/dsta-6/Food_webs/ch1_food_webs.pdf
+- load data and organise it in a networkx data structure
+- modeling tip: it is ok to have a special node representing “nature”
+- modeling tip: look for invariants
+- find the connected component (the bowtie):
+- source, connect and sink.
+
+- study degree distribution
+- find properties of a network in terms of the degree organization
+- study clustering coefficient: why is it so much better than plain network density?
