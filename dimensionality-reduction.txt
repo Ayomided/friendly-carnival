@@ -1,3 +1,4 @@
+█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░
 # Rank of a matrix
 Number of linearly independent columns of a matrix
 
@@ -85,3 +86,119 @@ Yes
 
 No
 -> Not necessary for casual viewers
+
+█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░
+## Massey ranking
+The Massey ranking system is based on solving a system of linear equations. The basic formula is:
+Mr = p
+Where:
+M is the Massey matrix
+r is the vector of team ratings
+p is the vector of score differentials
+To construct the Massey matrix M:
+
+The diagonal element M[i,i] is the number of games played by team i
+The off-diagonal element M[i,j] is the negative of the number of times team i played team j
+
+The vector p is calculated as the sum of score differentials for each team.
+
+█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░
+-> The Massey matrix M is constructed based on the number of games played between teams, not the goal differences. Here's how it's built:
+
+Diagonal elements M[i,i]:
+
+These represent the total number of games played by team i.
+For each team, count how many games they've played in total.
+
+
+Off-diagonal elements M[i,j]:
+
+These represent the number of times team i played against team j, but as a negative value.
+If team i played team j once, M[i,j] = -1
+If they played twice, M[i,j] = -2, and so on.
+If they didn't play at all, M[i,j] = 0
+
+For a given __directed network__: 
+-> Reciprocity is the probability of having links in both directions between two vertices.
+<- R measures how the economies of two countries become interconnected (or interdependent).
+
+r = L^<->/L
+
+L <->: number of reciprocal links
+L: total number of links.
+
+█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░
+-> Reconstruction
+C = Mcp · MTcp (m × m matrix, where m is the number of nodes)
+   Represents node-node relationships
+   Each entry Cij represents how nodes i and j are connected
+
+P = MTcp · Mcp (n × n matrix, where n is the number of edges)
+   Represents edge-edge relationships
+   Each entry Pij represents how edges i and j are related in the network structure
+
+      e1
+    A --- B
+e2  |     | e3
+    C --- D
+      e4
+
+█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░
+-> Assortativity
+Assortativity is a measure of the tendency for nodes in a network to connect 
+with other nodes that are similar to them in some way.
+
+-> Knn(d) = ∑(i:ki=d) Knn(i) / nd
+This formula is related to the average nearest neighbor degree as a function of node degree, which is used to measure degree assortativity.
+
+Where:
+- Knn(d) is the average nearest neighbor degree of nodes with degree d
+- ki is the degree of node i
+- Knn(i) is the average nearest neighbor degree of node i
+- nd is the number of nodes with degree d
+
+Interpretation:
+- If Knn(d) increases with d, the network is assortative
+- If Knn(d) decreases with d, the network is disassortative
+- If Knn(d) is constant, the network is neutral
+
+Types of Assortativity:
+a. Degree Assortativity: Nodes with similar degrees tend to connect.
+b. Attribute Assortativity: Nodes with similar attributes (e.g., age, gender) tend to connect.
+
+||| -> 
+The assortativity coefficient r ranges from -1 (disassortative) to 1 (assortative), with 0 indicating no assortativity. <-
+||| -> 
+
+█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░
+-> Balassa's RCA is an index used in international economics to calculate the relative advantage or disadvantage 
+of a country in a certain class of goods or services.
+
+Formula:
+RCA = (Xij / Xit) / (Xnj / Xnt)
+Where:
+Xij: Country i's exports of product j
+Xit: Country i's total exports
+Xnj: World exports of product j
+Xnt: Total world exports
+
+Interpretation:
+RCA > 1: Country has a comparative advantage in that product
+RCA < 1: Country has a comparative disadvantage in that product
+
+-> Alternatively:
+RCAcp = (Mcp / ∑p′ Mcp′) / (∑c′ Mc′p / ∑c′∑p′ Mc′p′)
+This is indeed a matrix formulation of the Revealed Comparative Advantage.
+
+Where:
+- RCAcp is the RCA for country c in product p
+- Mcp is the export value of product p by country c
+- ∑p′ Mcp′ is the total exports of country c
+- ∑c′ Mc′p is the world exports of product p
+- ∑c′∑p′ Mc′p′ is the total world exports
+
+This formula calculates the RCA for all country-product pairs simultaneously, which is more efficient for large datasets.
+
+Interpretation:
+- RCAcp > 1 indicates a comparative advantage
+- RCAcp < 1 indicates a comparative disadvantage

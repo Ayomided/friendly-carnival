@@ -1,7 +1,7 @@
 # OBJECTIVE A: WRITE OUR OWN GINI FUNCTION
-- inspect a Decision-tree baseline code
-- Lay out a function that segments the data according to the best Gini values available.:
-> Remember: Gini=0 is the best scenario
+-> inspect a Decision-tree baseline code
+-> Lay out a function that segments the data according to the best Gini values available.:
+-> Remember: Gini=0 is the best scenario
 
 ```
 def get_split(dataset):
@@ -48,3 +48,12 @@ Can you write Python functions that iteratively segment the data until you have 
 - study degree distribution
 - find properties of a network in terms of the degree organization
 - study clustering coefficient: why is it so much better than plain network density?
+
+## Create KNN in golang
+->  https://www.kdnuggets.com/2016/01/implementing-your-own-knn-using-python.html
+
+## Evaluating Classification performance
+-> https://www.dcs.bbk.ac.uk/~ale/dsta/dsta-4/Sklearn_classification/extra_materials/evaluating_classification.html#1
+
+## Non-binary classification: the MNIST 784 Dataset
+-> https://www.dcs.bbk.ac.uk/~ale/dsta/dsta-4/Sklearn_classification/extra_materials/nonbinary_classification.html#1
