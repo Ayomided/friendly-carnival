@@ -1,0 +1,78 @@
+# Rank of a matrix
+Number of linearly independent columns of a matrix
+
+> By doing Dimensionality reduction we incur some errors in the points as they dont exactly
+lie on the line
+
+Why dimentionality reduction?
+-> Discove hidden correlations; latent dimenions hidden in the dataset
+-> Reduce redundant or noisy features
+-> interpretation and visualization
+-> Easier storage and processing of data
+
+Normally, abilities are
+-> latent
+-> hard to measure
+-> time-dependent
+-> place-dependent
+
+yet, abilities are also
+-> hard to transcend (revert-to-the-mean effect, RTTM)
+-> relatively easy to perceive and project
+
+Certainly. This set of definitions describes a framework for ranking players over time, potentially in multiple dimensions. Let's break it down:
+
+1. Basic Definitions:
+   - P: Set of players
+   - |P| = n: There are n players
+   - T: Set of time instants
+   - r: P × T → ℝ: A function that assigns a real number rating to each player at each time instant
+
+2. Ranking Function (ρ):
+   - ρ: P × T → [1..n]: Assigns a rank (between 1 and n) to each player at each time
+   - ρ(p,t) = k ↔ |{pj : r(pj,t) ≤ r(pi,t)}| = k
+     This means: A player p at time t has rank k if and only if there are k players (including p) whose rating is less than or equal to p's rating at time t.
+
+3. Distance Function (δ):
+   - δ(pi,pj,t) = |r(pi,t) − r(pj,t)|
+   - This measures the absolute difference in ratings between two players at a given time
+   - It captures both similarity (small δ) and distance (large δ) between players' ratings
+
+4. Multi-dimensional Ranking:
+   - rmulti: P × T → ℝd: Assigns a d-dimensional real vector of ratings to each player at each time
+   - Often, rmulti(pi,t) = f(r1(pi,t), ..., rd(pi,t))
+     This means the multi-dimensional rating is often a function of individual ratings in each dimension
+
+5. Pareto Dominance:
+   - In multi-dimensional rankings, pi dominates pj at time t if:
+     For every dimension x, rx(pi,t) ≥ rx(pj,t)
+   - This means pi is at least as good as pj in all dimensions, and better in at least one
+
+Applications and Implications:
+
+1. Player Rankings: 
+   This system can be used to rank players in games, sports, or any competitive scenario over time.
+
+2. Dynamic Rankings: 
+   The inclusion of time (T) allows for tracking how rankings change over time.
+
+3. Multi-faceted Evaluation: 
+   The multi-dimensional aspect allows for ranking based on multiple criteria simultaneously.
+
+4. Comparative Analysis: 
+   The δ function allows for quantifying how close or far apart players are in their ratings.
+
+5. Non-linear Rankings: 
+   The Pareto dominance concept allows for situations where there's no clear linear ordering of players.
+
+6. Flexible Aggregation: 
+   The function f in the multi-dimensional case allows for different ways of combining dimensional ratings.
+
+7. Complex Decision Making: 
+   This framework can be used in scenarios where decisions need to be made based on multiple, possibly conflicting criteria over time.
+
+This framework is particularly useful in data science for:
+- Analyzing player performance in esports or traditional sports
+- Ranking products or services based on multiple features
+- Evaluating employee performance across various metrics
+- Assessing the evolution of entities (companies, countries, etc.) across multiple dimensions over time
