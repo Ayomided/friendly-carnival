@@ -1,6 +1,6 @@
 █░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░
 # Rank of a matrix
-Number of linearly independent columns of a matrix
+-> Number of linearly independent columns of a matrix
 
 > By doing Dimensionality reduction we incur some errors in the points as they dont exactly
 lie on the line
@@ -90,6 +90,9 @@ No
 █░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░
 ## Massey ranking
 The Massey ranking system is based on solving a system of linear equations. The basic formula is:
+
+<-> The data that drives Massey ratings is point difference. <->
+
 Mr = p
 Where:
 M is the Massey matrix

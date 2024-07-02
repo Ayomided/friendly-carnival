@@ -1,0 +1,150 @@
+█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░
+█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░█░
+
+## Keener's Method
+
+-> Assumption 1:
+One's strength should be measured in relation to the other teams'
+Where s_ii = 0 because you can't play against yourself
+
+-> Assumption 2:
+Ratings are a unit quanity distributed among tournament participants
+Such that your rating improves as a teams' rating worsens as in a 
+pie chart
+
+-> Assumption 3:
+s = 𝜆r
+Where 𝜆 is a scaling factor of strength and rating
+
+# Keener's formula
+--> Sij = (sij + 1) / (sij + sji + 2)
+
+# Skew to adjust for extreme values
+--> h(x) = (1/2) + (1/2) * sign(x-1/2) * sqrt(|2x-1|)
+
+Certainly! Let's compare Keener's method to Massey's method, highlighting their similarities, differences, and relative strengths.
+
+Comparison of Keener's and Massey's Methods:
+
+1. Basic Principle:
+
+   Keener's Method:
+   - Based on eigenvector centrality
+   - Considers both wins and scoring margins
+   - Accounts for strength of schedule implicitly
+
+   Massey's Method:
+   - Based on solving a system of linear equations
+   - Primarily considers score differences
+   - Explicitly accounts for strength of schedule
+
+2. Input Data:
+
+   Keener's Method:
+   - Uses actual scores of games
+   - Can incorporate additional performance metrics
+
+   Massey's Method:
+   - Primarily uses score differences
+   - Typically doesn't incorporate additional metrics
+
+3. Mathematical Approach:
+
+   Keener's Method:
+   - Constructs a matrix of pairwise comparisons
+   - Finds the principal eigenvector of this matrix
+
+   Massey's Method:
+   - Constructs a matrix based on game outcomes
+   - Solves Mr = p, where M is the Massey matrix, r is the rating vector, and p is the point differential vector
+
+4. Iterative vs. Direct Solution:
+
+   Keener's Method:
+   - Typically solved iteratively (power method for eigenvector)
+
+   Massey's Method:
+   - Solved directly through matrix inversion or other linear algebra techniques
+
+5. Handling of Unplayed Games:
+
+   Keener's Method:
+   - Introduces a dummy team to handle uneven schedules
+
+   Massey's Method:
+   - Naturally handles uneven schedules in its formulation
+
+6. Sensitivity to Extreme Scores:
+
+   Keener's Method:
+   - Uses a skew function to mitigate the impact of extreme scores
+
+   Massey's Method:
+   - More sensitive to large score differences
+
+7. Interpretability:
+
+   Keener's Method:
+   - Rankings represent a form of "importance" or "centrality" in the network of games
+
+   Massey's Method:
+   - Rankings directly represent expected point differentials
+
+Example Comparison:
+
+Let's use a simple example to illustrate the differences. Consider three teams A, B, and C with these game results:
+
+A vs B: A wins 3-1
+B vs C: C wins 2-0
+C vs A: A wins 2-1
+
+Keener's Method (simplified):
+
+1. Construct the matrix:
+   ```
+      A       B       C
+   A  0.5     0.75    0.6
+   B  0.25    0.5     0.167
+   C  0.4     0.833   0.5
+   ```
+
+2. Find the principal eigenvector (after iterations):
+   ```
+   A: 0.42
+   B: 0.25
+   C: 0.33
+   ```
+
+Massey's Method:
+
+1. Construct the Massey matrix and point differential vector:
+   ```
+   M = [ 2 -1 -1]    p = [ 3]
+       [-1  2 -1]        [-4]
+       [-1 -1  2]        [ 1]
+   ```
+
+2. Solve Mr = p:
+   ```
+   A:  2.33
+   B: -1.67
+   C: -0.67
+   ```
+
+Visualization of Results:
+
+```
+Keener's Method     Massey's Method
+0.5 |   A            3 |   A
+    |   |  C           |   
+0.3 |   |  |           |   
+    |   |  |  B        |   
+0.1 |   |  |  |     0  +---+---+---
+    |   |  |  |        |       C
+    +---+--+--+       -2 |   B   
+```
+
+Key Observations:
+1. Both methods rank A first, but Keener's method shows C and B closer together.
+2. Massey's method emphasizes the point differentials more, resulting in larger gaps between teams.
+3. Keener's method provides normalized scores between 0 and 1, while Massey's ratings can be positive or negative.

@@ -1,0 +1,15 @@
+-> # Centrality
+
+Degree centrality
+--> High degree leads to higher centrality
+
+Closeness centrality
+--> Being in close reach to anywhere.
+Let dij be the distance between i and j on the graph.
+
+Harmonized centrality
+--> Immunised against isolated vertices/disconnection
+
+BETWEENNESS CENTRALITY
+--> 
+ 
